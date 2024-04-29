@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import {jwtDecode} from 'jwt-decode'
 import { usuario } from '../component/usuario/model/usuario.interface';
-import { GetSensor, GetFiltro, promedio } from '../component/dashboard/model/sensor.interface';
+import { GetSensor, GetFiltro } from '../component/dashboard/model/sensor.interface';
 
 @Injectable({
   providedIn: 'root'

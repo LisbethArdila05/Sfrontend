@@ -34,6 +34,7 @@ export class GraficasComponent  implements OnInit {
    
   plantaElejida: number = 0;
 
+  getU: any
   //datosDisponibles: boolean = false
   
 
@@ -42,6 +43,7 @@ export class GraficasComponent  implements OnInit {
   ngOnInit() {
     this.plantas()
     this.sensorPrimero()
+    this.getU = this.serviceA.getUser()
   }
   private imagePlanta(tipoPlanta: string) {
     switch(tipoPlanta){
@@ -152,6 +154,7 @@ export class GraficasComponent  implements OnInit {
   aceptarMenu(): void {
     if(this.plantaElejida !== undefined){
       this.serviceA.conexionArduino(this.plantaElejida).subscribe((res:any) =>{
+        console.log(this.plantaElejida)
       },
       (error:any) => {
         console.log(error)
