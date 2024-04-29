@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+.cuenta{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    width: 75%;
+    height: 110vh; 
+    margin-left: 25%;
+}
+.perfil{
+    width: 100%;
+    height: 40vh;
+    margin-top: 3%;
+}
+.avatar{
+    width: 23%;
+    height: 38vh;
+    border-radius: 50%;
+    margin-left: 15%;
+    float: left;
+    border: 1px solid #000;
+}
+.avatar img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+}
+.usuario{
+    position: relative;
+    left: 10%;
+    top: 35%;
+}
+.info{
+    background-color: rgba(215, 228, 192, 0.473);
+    height: 50vh;
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+}
+.info h1{
+    margin-left: 10%;
+}
+.informacion{
+    background-color: aqua;
+    width: 80%;
+    margin: auto;
+}
+.Nusuario{
+    float: left;
+    width: 45%;
+    height: 10vh;
+}
+.Nusuario p{
+    margin-top: 10%;
+    border-bottom: 2px solid #000;
+}
+.Cusuario{
+    height: 10vh;
+    float: right;
+    width: 45%;
+}
+.Cusuario p{
+    margin-top: 10%;
+    border-bottom: 2px solid #000;
+}
+  .b-guardar{
+    position: relative;
+    background: #ED213A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    width: 40%;
+    height: 10vh;
+    border-radius: 10px;
+    font-size: 1.5em;
+    left: 55%;
+    margin-top: 10%;
+  }
+  .b-close{
+    position: relative;
+    background: #ED213A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    width: 40%;
+    height: 10vh;
+    border-radius: 10px;
+    font-size: 1.5em;
+    right: 35%;
+    }
+  //responsivo
+  

@@ -1,0 +1,40 @@
+<section class="login">
+  <article class="wraper">
+    <div class="form-user">
+      <h1>Iniciar sesion</h1>
+      <form [formGroup]="formUserLogin" (ngSubmit)="loginUsuario()">
+        <fieldset class="datos-usuario">
+          <ion-icon name="person-outline"></ion-icon> 
+          <input type="text" formControlName="nombreUsuario" placeholder="Nombre de usuario" [ngClass]="{'is-invalid animated shake': getNombreUsuario.invalid && getNombreUsuario.touched}">
+          <div class="alert alert-danger mt-2" [hidden]="getNombreUsuario.valid || getNombreUsuario.pristine">
+            El campo Usuario es obligatorio
+          </div>
+        </fieldset>
+        <fieldset class="datos-usuario">
+          <ion-icon name="mail-outline"></ion-icon>
+          <input type="password" formControlName="contrasena" placeholder="Contraseña" [ngClass]="{'is-invalid animated shake': getContrasena.invalid && getContrasena.touched}">
+          <div class="alert alert-danger mt-2" [hidden]="getContrasena.valid || getContrasena.pristine">
+            <span *ngIf="getContrasena.errors?.['required']">
+              El campo Password es obligatorio
+            </span>
+            <span *ngIf="getContrasena.errors?.['min']">
+              La contraseña que ingresó es muy corta
+            </span>
+          </div>
+        </fieldset>
+        <button type="submit" [disabled]="formUserLogin.invalid">Aceptar</button>
+        <article class="registro">
+          <p>¿No tienes una cuenta?<a href="../registro"> Registrarse</a></p>
+       </article>
+      </form>
+    </div> 
+  </article>
+  <div *ngIf="mostrarAceptar"> 
+    <app-shared-alerts (aceptarClick)="aceptarAlerta()" [tipoalerta]="'Aceptar'" ></app-shared-alerts>
+  </div>
+  <div *ngIf="mostrarError">
+    <app-shared-alerts (errorClick)=" aceptarError()" [tipoalerta]="'Error'" ></app-shared-alerts>
+  </div>
+  <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"> </script> 
+  <script  nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
+</section>

@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+.Dashboard{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    width: 75%;
+    height: 100vh; 
+    margin-left: 25%;
+    margin-top: -10%;
+}
+.Dashboard h1{
+    font-size: 1.5em;
+    margin-left: 5%;
+}
+.informacion{
+    display: flex;
+    margin-left: 15%;
+    margin-top: -3.5%;
+}
+.info-label{
+    padding-left: 5%;
+}
+.label-planta{
+    font-size: 1em;
+}
+.label-fecha{
+    font-size: .9em;
+}
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #5fa08c;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin: -25% 780%;
+} 
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+}
+button:hover span {
+    padding-right: 15px;
+}
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Opacidad ajustable */
+    z-index: 9; /* Un valor menor que el modal */
+  }
+   .form-planta{
+    width: 10vw;
+    height: 8vh;
+    margin-left: 10%;
+}
+select{
+    position: absolute;
+    left: 50%;
+    top: 70px;
+}
+.planta{
+    position: absolute;
+    left: 23%;
+    top: 70px;
+}
+.form-buton{
+    margin-top: 32%;
+    margin-left: 10%;  
+}
+.aceptar{
+    position: absolute;
+    margin-left: 60%;
+    margin-top: -8%;
+}
+.form-select{
+    border-radius: 10px;
+    z-index: 12;
+    width: 30vw;
+    height: 30vh;
+    position: relative;
+    margin-top: 100px;
+    margin-left: 400px;
+    background-color: #FFF
+}
+
+
+.datos-sensor{
+    margin-top: 5%;
+    width: 100%;
+}
+.grafica{
+    width: 50%;
+    height: 60vh;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.grafica h2{
+    text-align: center;
+}
+
+.descripcion{
+    //background-color: #b8c7c7;
+    width: 37%;
+    height: 60vh;
+    margin-left: 60%;
+    margin-top: -39%;
+}
+.img-descripcion img{
+    width: 33%;
+    height: 19vh;
+    border-radius: 100px;
+    margin-top: 5%;
+    margin-left: 35%;
+}
+.info-descripcion h3{
+    font-size: 1.1em;
+}
+.card {
+    width: 210px;
+    height: 100px;
+    background: #5fa08c;
+    box-shadow: rgba(0, 0, 0, 0.4) 10px 20px 30px, rgba(0, 0, 0, 0.3) 10px 1px 53px 3px, rgba(1, 0, 0, 0.2) 0px -1px 3px inset;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2%;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: #fff;
+    float: left;
+    margin-left: 10%;
+  }
+  
+  .card:hover {
+    transform: scale(1.021);
+  }
+  
+  .card:active {
+    transform: scale(0.95) rotateZ(1.1deg);
+  }
+  //clases para las targetas 
+  .temperatura-rojo{
+    background: #EB3349;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+  .temperatura-verde{
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .humedad-rojo{
+    background: #EB3349;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+  .humedad-verde{
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }

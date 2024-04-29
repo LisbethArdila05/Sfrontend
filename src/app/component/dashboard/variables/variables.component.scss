@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+.historial{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    width: 75%;
+    height: 110vh; 
+    margin-left: 25%;
+}
+.historial h1{
+    margin-left: 5%;
+    width: 20%;
+}
+.graficas{
+    width: 90%;
+    height: 50%;
+    margin-top: -1%;
+    margin-left: 5%;
+}
+.grafica1{
+    height: 85%;
+    width: 55%;
+    float: left;
+    border-radius: 10px;
+}
+.grafica2{
+    height: 83%;
+    width: 43%;
+    margin-left: 57%;
+}
+.show-entries{
+    width: 170px;
+    margin-top: -4%;
+    margin-left: 5%;
+    z-index: 20;
+}
+
+.tabla{
+    width: 90%;
+    height: 35%;
+    margin-top: 2%;
+    margin-left: 5%;
+    z-index: 19;
+}
+.table{
+    width: 100%;
+    height: 100%;
+    background-color: #E1F0DA;
+    border-radius: 10px;
+}
+thead{
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 40px;
+}
+
+td{
+    text-align: center;
+    padding-top: 1%;
+}

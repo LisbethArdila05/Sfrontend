@@ -1,0 +1,68 @@
+<app-shared-menu></app-shared-menu>
+<div class="form-planta">
+  <button (click)="menuVisible()">
+    <span>Actualizar</span>
+  </button>
+  <div class="overlay" *ngIf="seleccionPlanta"></div>
+  <article article *ngIf="seleccionPlanta" class="form-select"> 
+      <label class="planta">Tipo de Planta: </label>
+      <select [(ngModel)]="plantaElejida" name="plantaSelect">
+        <option value="0">Selecciona</option>
+        <option *ngFor="let planta of listPlant" [value]="planta.id" >{{ planta.tipoPlanta }}</option>
+      </select>
+      <button class="form-buton" (click)="cancelarMenu()">Cancelar</button>
+      <button class="form-buton aceptar" [disabled]="!plantaElejida" (click)="aceptarMenu()">Aceptar</button>
+  </article>
+</div> 
+
+<section class="Dashboard" *ngIf="datosDisponibles">
+    <h1>Dashboard</h1>
+    <div class="informacion" *ngFor="let sensor of listSensor">
+      <label class="info-label label-planta">{{sensor.tipoPlanta.tipoPlanta}}  </label>
+      <label class="info-label label-fecha">{{ sensor.fecha | date:'yyyy-MM-dd h:mm a'}}</label>
+    </div>
+    <div class="datos-sensor">
+      <div class="grafica">
+        <h2>Grafica</h2>
+        <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [type]="'bar'"
+          [options]="barChartOptions"
+        >
+        </canvas>
+      </div>
+      <div class="descripcion">
+        <div class="img-descripcion">
+          <img [src]="imgPlanta">
+        </div>
+        <div class="info-descripcion" *ngFor="let sensor of listSensor"> 
+          <h3>Valoracion</h3>
+          <p class="txt-humedad">{{humconclusion}} los valores recomendados son: {{sensor.tipoPlanta.sHumedadAmbiente}}</p>
+          <p class="txt-temperatura">{{tempconclusion}}los valores recomendados son: {{sensor.tipoPlanta.sTemperaturaAmbiente}}</p>
+        </div>
+      </div>
+      <div class="datos" *ngFor="let sensor of listSensor">
+        <div class="card" [ngClass]="tempcolor">
+          <p class="c-txt">Temperatura C° {{sensor.sTemperaturaC}}</p>
+        </div>
+        <div class="card" [ngClass]="tempcolor">
+          <p class="c-txt">Temperatura F° {{sensor.sTemperaturaF}}</p>
+        </div>
+        <div class="card" [ngClass]="humcolor">
+          <p class="c-txt">Humedad {{sensor.sHumedad}}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="primer" *ngIf="listSensor.length === 0">
+      <div class="img">
+        <img src="" alt="">
+      </div>
+      <div class="description">
+        <label>Aun no hay datos</label>
+      </div>
+    </div>
+</section>
+
+

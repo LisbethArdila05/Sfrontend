@@ -1,0 +1,7 @@
+{
+  "name": "Sfrontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

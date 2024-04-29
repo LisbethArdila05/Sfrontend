@@ -1,0 +1,132 @@
+.success{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+.container-etiqueta{
+    background-color:#fff;
+    width: 20%;
+    height: 45%;
+    margin: 13% 40%;
+    border-radius: 10px;
+}
+.imagen-success{
+    position: relative;
+    background-color: #75c275;
+    width: 30%;
+    height: 27%;
+    border-radius: 50%;
+    margin-left: 35%;
+    margin-top: 10%;
+}
+.imagen-success ion-icon{
+    position: relative;
+    color: #fff;
+    margin-left: 15%;
+    margin-top: 10%;
+    font-size: 3.5em;
+}
+.message-success {
+    text-align: center;
+}
+.container-etiqueta button{
+    width: 100%;
+    background-color: #75c275;
+    height: 28%;
+    font-size: 1.1em;
+}
+//alerta de error 
+.error{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+.container-e{
+    background-color:#fff;
+    width: 20%;
+    height: 45%;
+    margin: 13% 40%;
+    border-radius: 10px;
+}
+.imagen-error{
+    position: relative;
+    background-color: #cf5c5c;
+    width: 30%;
+    height: 27%;
+    border-radius: 50%;
+    margin-left: 35%;
+    margin-top: 10%;
+}
+.imagen-error ion-icon{
+    position: relative;
+    color: #fff;
+    margin-left: 15%;
+    margin-top: 10%;
+    font-size: 3.5em;
+}
+.message-error {
+    text-align: center;
+}
+.container-e button{
+    width: 100%;
+    background-color: #cf5c5c;
+    height: 28%;
+    font-size: 1.1em;
+}
+.question{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex; 
+}
+.C-etiqueta{
+    background-color:#fff;
+    width: 25%;
+    height: 45%;
+    margin: 13% 40%;
+    border-radius: 10px;
+}
+.imagen-question{
+    position: relative;
+    background-color: #cf5c5c;
+    width: 30%;
+    height: 27%;
+    border-radius: 50%;
+    margin-left: 35%;
+    margin-top: 10%; 
+}
+.imagen-question ion-icon{
+    position: relative;
+    color: #fff;
+    margin-left: 15%;
+    margin-top: 10%;
+    font-size: 3.5em;   
+}
+.message-question{
+    text-align: center;
+}
+.but{
+    width: 50%;
+    height: 28%;
+    font-size: 1.1em;
+}
+.naceptar{
+    background-color: #cf5c5c;
+}
+.aceptar{
+    background-color: #75c275;
+}

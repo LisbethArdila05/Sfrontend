@@ -1,0 +1,37 @@
+<section class="success" *ngIf="tipoalerta === 'Aceptar'">
+  <div class="container-etiqueta">
+    <div class="imagen-success">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </div>
+    <div class="message-success">
+      <h1>Success</h1>
+      <p>Proceso exitoso</p>
+    </div>
+    <button (click)="onAceptarclick()">Aceptar</button>
+  </div>
+</section>
+<section class="error" *ngIf="tipoalerta ==='Error'">
+  <div class="container-e">
+    <div class="imagen-error">
+      <ion-icon name="close-outline"></ion-icon>
+    </div> 
+    <div class="message-error">
+      <h1>Oh no</h1>
+      <p>Proceso no exitoso</p>
+    </div>
+    <button (click)="onErrorclick()">Aceptar</button>
+  </div>
+</section>
+<section class="question" *ngIf="tipoalerta === 'Question'">
+  <div class="C-etiqueta">
+    <div class="imagen-question">
+      <ion-icon name="alert-outline"></ion-icon>
+    </div>
+    <div class="message-question">
+      <h1>Alerta</h1>
+      <p>¿Desea continuar?</p> 
+    </div>
+    <button class="but aceptar" (click)="onQuestionclick('no')">Cancelar</button>
+    <button class="but naceptar" (click)="onQuestionclick('si')">Aceptar</button>
+  </div>
+</section>
