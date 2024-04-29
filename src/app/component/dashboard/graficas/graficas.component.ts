@@ -120,25 +120,25 @@ export class GraficasComponent  implements OnInit {
     let humscolor : string = '';
     if(planta){
       if(ValidarHumedad(sensorData.sHumedad, planta.sHumedadAmbiente)){
-        this.humconclusion = "la humedad esta por dentro de lo establecido para el tipo de planta "
+        this.humconclusion = "La humedad está dentro de los parámetros establecidos, "
         humcolor = 'humedad-verde';
       }else {
-        this.humconclusion = "la humedad esta por fuera de lo establecido para el tipo de planta "
+        this.humconclusion = "La humedad no está en el rango adecuado, "
         humcolor = 'humedad-rojo';
       }
-      if(ValidarTemperatura(sensorData.sHumedad, planta.sTemperaturaAmbiente)){
-        this.tempconclusion = "la temperatura esta por dentro de lo establecido para el tipo de planta "
+      if(ValidarTemperatura(sensorData.sTemperaturaC, planta.sTemperaturaAmbiente)){
+        this.tempconclusion = "La temperatura está dentro de los parámetros establecidos, "
         tempcolor = 'temperatura-verde'
       }
       else {
-        this.tempconclusion = "la temperatura esta por fuera de lo establecido para el tipo de planta "
+        this.tempconclusion = "La temperatura no está en el rango adecuado, "
        tempcolor = 'temperatura-rojo'
       }
       if(ValidarHumedadS(sensorData.sHumedadS, planta.sHumedadSuelo)){
-        this.humsconclusion = "la humedad del suelo esta por dentro de lo establecido para el tipo de planta "
+        this.humsconclusion = "La humedad del suelo está dentro de los parámetros establecidos "
         humscolor = 'humedad-verde';
       }else {
-        this.humsconclusion = "la humedad del suelo esta por fuera de lo establecido para el tipo de planta "
+        this.humsconclusion = "La humedad del suelo no está en el rango adecuado, "
         humscolor = 'humedad-rojo';
       }
     }

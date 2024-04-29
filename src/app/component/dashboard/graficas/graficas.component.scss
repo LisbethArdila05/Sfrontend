@@ -121,7 +121,7 @@ select{
 }
 
 .descripcion{
-    //background-color: #b8c7c7;
+    //background-color: #b8c7c7; 
     width: 37%;
     height: 60vh;
     margin-left: 60%;
@@ -134,8 +134,11 @@ select{
     margin-top: 5%;
     margin-left: 35%;
 }
-.info-descripcion h3{
-    font-size: 1.1em;
+.info-descripcion{
+    width: 400px;
+    position: relative;
+    //right: 7%;
+    bottom: 4%;
 }
 .card {
     width: 210px;
