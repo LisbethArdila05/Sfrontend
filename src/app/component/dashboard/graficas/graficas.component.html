@@ -15,7 +15,7 @@
   </article>
 </div> 
 
-<section class="Dashboard" *ngIf="datosDisponibles">
+<section class="Dashboard">
     <h1>Dashboard</h1>
     <div class="informacion" *ngFor="let sensor of listSensor">
       <label class="info-label label-planta">{{sensor.tipoPlanta.tipoPlanta}}  </label>
@@ -40,14 +40,15 @@
           <h3>Valoracion</h3>
           <p class="txt-humedad">{{humconclusion}} los valores recomendados son: {{sensor.tipoPlanta.sHumedadAmbiente}}</p>
           <p class="txt-temperatura">{{tempconclusion}}los valores recomendados son: {{sensor.tipoPlanta.sTemperaturaAmbiente}}</p>
+          <p class="txt-humedadS">{{humsconclusion}}los valores recomendados son: {{sensor.tipoPlanta.sHumedadSuelo}}</p>
         </div>
       </div>
       <div class="datos" *ngFor="let sensor of listSensor">
         <div class="card" [ngClass]="tempcolor">
           <p class="c-txt">Temperatura C° {{sensor.sTemperaturaC}}</p>
         </div>
-        <div class="card" [ngClass]="tempcolor">
-          <p class="c-txt">Temperatura F° {{sensor.sTemperaturaF}}</p>
+        <div class="card" [ngClass]="humscolor">
+          <p class="c-txt">Humedad suelo {{sensor.sHumedadS}}</p>
         </div>
         <div class="card" [ngClass]="humcolor">
           <p class="c-txt">Humedad {{sensor.sHumedad}}</p>

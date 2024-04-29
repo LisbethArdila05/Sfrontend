@@ -12,13 +12,18 @@ import { DatePipe } from '@angular/common';
 })
 export class GraficasComponent  implements OnInit {
   public barChartData: any[] = [];
-  public barChartLabels: string[] = ['Humedad', 'Temperatura C°', 'Temperatura F°'];
+  public barChartLabels: string[] = ['Humedad', 'Temperatura C°', 'Humedad Suelo'];
   public barChartOptions: any = { responsive: true,}; 
   public barChartLegend = true;
-
+  
+  //colores targets
    humcolor: string= '';
    tempcolor :string = '';
+   humscolor :string='';
+
+  //conclusiones 
    humconclusion :string = '';
+   humsconclusion: string= ''
    tempconclusion: string ='';
 
    imgPlanta: string ='';
@@ -29,7 +34,7 @@ export class GraficasComponent  implements OnInit {
    
   plantaElejida: number = 0;
 
-  datosDisponibles: boolean = false
+  //datosDisponibles: boolean = false
   
 
   constructor(private service: ServicePlantaService, private serviceA: ServiceArduinoService) { }
@@ -78,13 +83,13 @@ export class GraficasComponent  implements OnInit {
       if(typeof res.GetFirstsensor === 'object'){
         this.listSensor = []
         this.listSensor.push(res.GetFirstsensor)
-        this.datosDisponibles = true
+       // this.datosDisponibles = true
         this.barChartData = [
           {
             data: [
               res.GetFirstsensor.sHumedad,
               res.GetFirstsensor.sTemperaturaC,
-              res.GetFirstsensor.sTemperaturaF
+              res.GetFirstsensor.sHumedadS
             ],
             backgroundColor: '#5fa08c',
             label: 'Sensores'
@@ -92,9 +97,10 @@ export class GraficasComponent  implements OnInit {
           const tPlanta = sensorData.tipoPlanta.tipoPlanta;
           this.imgPlanta = this.imagePlanta(tPlanta)
           
-        const {humcolor, tempcolor} = this.compararDatos(sensorData);
+        const {humcolor, tempcolor, humscolor} = this.compararDatos(sensorData);
         this.humcolor = humcolor
         this.tempcolor = tempcolor
+        this.humscolor = humscolor
         
       } else{
         console.log("No es un objeto")
@@ -109,6 +115,7 @@ export class GraficasComponent  implements OnInit {
     const planta = sensorData.tipoPlanta;
     let humcolor: string= '';
     let tempcolor :string = '';
+    let humscolor : string = '';
     if(planta){
       if(ValidarHumedad(sensorData.sHumedad, planta.sHumedadAmbiente)){
         this.humconclusion = "la humedad esta por dentro de lo establecido para el tipo de planta "
@@ -125,8 +132,15 @@ export class GraficasComponent  implements OnInit {
         this.tempconclusion = "la temperatura esta por fuera de lo establecido para el tipo de planta "
        tempcolor = 'temperatura-rojo'
       }
+      if(ValidarHumedadS(sensorData.sHumedadS, planta.sHumedadSuelo)){
+        this.humsconclusion = "la humedad del suelo esta por dentro de lo establecido para el tipo de planta "
+        humscolor = 'humedad-verde';
+      }else {
+        this.humsconclusion = "la humedad del suelo esta por fuera de lo establecido para el tipo de planta "
+        humscolor = 'humedad-rojo';
+      }
     }
-    return {humcolor, tempcolor}
+    return {humcolor, tempcolor, humscolor}
   }
   menuVisible(){
     this.seleccionPlanta = true
@@ -150,14 +164,16 @@ export class GraficasComponent  implements OnInit {
     }
   }
 }
-
 function ValidarTemperatura(valor:number, rango:string):boolean {
   const[min, max]=rango.split('-').map(parseFloat);
   return valor >= min && valor <=max;
 }
- 
 function ValidarHumedad(valor:number, rango:string):boolean {
   const[min, max]=rango.split('-').map(parseFloat);
+  return valor >= min && valor <=max;
+}
+function ValidarHumedadS(valor:number, rango:string):boolean{
+  const[min, max]=rango.split('-').map(parseInt);
   return valor >= min && valor <=max;
 }
 

@@ -3,6 +3,7 @@ export interface GetSensor{
     sHumedad: number,
     sTemperaturaC: number,
     sTemperaturaF:number,
+    sHumedadS: number,
     fecha: Date,
     idtipoPlanta: number,
     tipoPlanta:{
@@ -15,10 +16,4 @@ export interface GetSensor{
 export interface GetFiltro{
     fecha: string,
     idtipoPlanta: number 
-}
-
-export interface promedio{
-    sHumedadP: string,
-    sTemperaturaCP: string,
-    sTemperaturaFP:string
 }
