@@ -14,7 +14,7 @@ import { PaginatePipe } from 'ngx-pagination';
 export class VariablesComponent  implements OnInit {
 
   public barChartData: any[] = [];
-  public barChartLabels: string[] = ['Humedad', 'Temperatura C°', 'Temperatura F°'];
+  public barChartLabels: string[] = ['Humedad', 'Temperatura C°', 'Humedad suelo'];
   public barChartOptions: any = { responsive: true}; 
   public barChartLegend = true;
 
@@ -55,7 +55,7 @@ export class VariablesComponent  implements OnInit {
         data: [
           datos.promedioHumedad, 
           datos.promedioTemperaturaC, 
-          datos.promedioTemperaturaF
+          datos.promedioHumedadS
         ],
         backgroundColor: [
           '#11998e',
@@ -84,14 +84,14 @@ export class VariablesComponent  implements OnInit {
           mes: key,
           totalHumedad: 0,
           totalTemperaturaC: 0,
-          totalTemperaturaF: 0,
+          totalHumedadS: 0,
           count: 0
         };
       }
 
       promediosPorMes[key].totalHumedad += sensor.sHumedad;
       promediosPorMes[key].totalTemperaturaC += sensor.sTemperaturaC;  
-      promediosPorMes[key].totalTemperaturaF += sensor.sTemperaturaF;
+      promediosPorMes[key].totalHumedadS += sensor.sHumedadS;
       promediosPorMes[key].count++;
     });
 
@@ -100,7 +100,7 @@ export class VariablesComponent  implements OnInit {
       mes: datos.mes,
       promedioHumedad: datos.totalHumedad / datos.count,
       promedioTemperaturaC: datos.totalTemperaturaC / datos.count,
-      promedioTemperaturaF: datos.totalTemperaturaF / datos.count
+      promedioHumedadS: datos.totalHumedadS / datos.count
     }));
     return promedios
   }
