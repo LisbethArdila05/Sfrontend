@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { usuario } from '../component/usuario/model/usuario.interface';
@@ -29,27 +28,6 @@ export class ServiceUsuarioService {
       return false
     }
     return true
-  }
-  getToken():string | null{
-    const token = localStorage.getItem('tokenSign')
-    //console.log(token)
-    return token
-  }
-  getUser(){
-    const tokenSign = this.getToken()
-    //console.log(tokenSign)
-    if(tokenSign){
-      const decode = jwtDecode(tokenSign) as usuario
-      const usuario = decode.nombreUsuario
-      console.log(usuario)
-      this.http.post<usuario>(`${this.url}/usuario/info`, {usuario}).subscribe( res => {},
-      (error)=>{
-        console.log(error)
-      })
-      return decode
-    }else{
-      return null
-    }
   }
   getInfoUser():Observable<usuario>{
     return this.http.get<usuario>(`${this.url}/usuario/obtener`)

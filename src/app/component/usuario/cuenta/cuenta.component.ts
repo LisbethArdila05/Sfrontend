@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { usuario } from '../model/usuario.interface';
 import { ServiceUsuarioService } from 'src/app/service/service-usuario.service';
 import { Router } from '@angular/router';
+import {jwtDecode} from 'jwt-decode'
 
 @Component({
   selector: 'app-cuenta',
@@ -9,31 +10,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./cuenta.component.scss'],
 })
 export class CuentaComponent  implements OnInit {
-  getUsuario: any
-  getU: any
+  
+  Usuario: usuario = {
+    id: 0,
+    nombreUsuario: '',
+    email: '',
+    contrasena: ''
+  }
 
   mostrarAlerta: boolean = false
-
   mostrarEliminar: boolean = false
 
-  
   constructor(private service: ServiceUsuarioService, private router: Router) { }
 
   ngOnInit() {
-    this.getU = this.service.getUser()
-    this.mostrarUser()
-    //this.close()
-    // this.deleteUser()
+    const token = localStorage.getItem('tokenSign') || ''
+    const decode = jwtDecode(token) as usuario
+    this.Usuario = decode
+    console.log(this.Usuario)
   }
-  mostrarUser(){
-    this.service.getInfoUser().subscribe((res: any)=>{
-      this.getUsuario = res
-      console.log('ok controlador', this.getUsuario)
-    },
-    (error)=>{
-      console.log(error)
-    }
-  )}
+
   alertSi(){
     this.service.closeSession()
     this.router.navigateByUrl('/login')

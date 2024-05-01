@@ -4,6 +4,8 @@ import { planta } from '../model/planta.interface';
 import { ServiceArduinoService } from 'src/app/service/service-arduino.service';
 import { GetSensor } from '../model/sensor.interface';
 import { DatePipe } from '@angular/common';
+import { usuario } from '../../usuario/model/usuario.interface';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-graficas',
@@ -34,16 +36,23 @@ export class GraficasComponent  implements OnInit {
    
   plantaElejida: number = 0;
 
-  getU: any
-  //datosDisponibles: boolean = false
-  
+  Usuario: usuario = {
+    id: 0,
+    nombreUsuario: '',
+    email: '',
+    contrasena: ''
+  }  
 
   constructor(private service: ServicePlantaService, private serviceA: ServiceArduinoService) { }
 
   ngOnInit() {
     this.plantas()
     this.sensorPrimero()
-    this.getU = this.serviceA.getUser()
+    const token = localStorage.getItem('tokenSign') || ''
+    const decode = jwtDecode(token) as usuario
+    this.Usuario = decode
+    //this.getU = this.serviceA.getUser()
+
   }
   private imagePlanta(tipoPlanta: string) {
     switch(tipoPlanta){
@@ -153,10 +162,11 @@ export class GraficasComponent  implements OnInit {
   //este metodo captura el id del tipo de planta para guardarlo junto con los datos que llegan del sensor 
   aceptarMenu(): void {
     if(this.plantaElejida !== undefined){
-      this.serviceA.conexionArduino(this.plantaElejida).subscribe((res:any) =>{
+      this.serviceA.conexionArduino(this.plantaElejida, this.Usuario.id).subscribe((res:any) =>{
         console.log(this.plantaElejida)
+        this.sensorPrimero()
       },
-      (error:any) => {
+      (error:any) => { 
         console.log(error)
       }
       )

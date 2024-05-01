@@ -196,27 +196,46 @@ select{
     margin-left: 5%;
     margin-top: 2%;
    }
+   .img-descripcion{
+    display: none;
+   }
+   .grafica{
+    margin-top: 80%;
+    height: 30vh;
+    width: 90%;
+    margin: 0 auto; 
+   }
+   .grafica h2{
+    display: none;
+   }
+   .datos{
+    background-color: #5fa08c;
+    position: relative;
+    margin-top: -100%;
+   }
+   .card{
+    width: 25%;
+    height: 8vh;
+    margin-left: 5%;
+    box-shadow: none;
+   }
+   .c-txt{
+    font-size: .7em;
+   }
    .descripcion{
     position: relative;
-    background-color: #5fa08c;
-    margin-top: -120%;
     width: 80%;
-    margin-left: 1%;
+    height: 30vh;
+    margin: 15% auto;
    }
    .info-descripcion{
     width: 100%;
     font-size: .7em;
    }
-   .img-descripcion{
-    display: none;
+   button{
+    margin-top: 490px;
+    margin-left: 140px;
    }
-   .grafica{
-    background-color: #11998e;
-    margin-top: 80%;
-    height: 20%;
-   }
-
-
 }
 @media (max-width: 400px) {
     

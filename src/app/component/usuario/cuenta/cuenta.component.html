@@ -4,20 +4,20 @@
             <div class="avatar">
                 <img src="../../../../assets/plants-8264659_1280.jpg" class="famele">
             </div>
-            <div class="usuario" *ngIf="getUsuario">
-                <h1>{{getUsuario.nombreUsuario}}</h1>
+            <div class="usuario" *ngIf="Usuario">
+                <h1>{{Usuario.nombreUsuario}}</h1>
             </div>
         </div>
         <div class="info">
             <h1>Mi informacion</h1>
-            <div class="informacion" *ngIf="getUsuario">
+            <div class="informacion" *ngIf="Usuario">
                 <div class="Nusuario">
                     <label>Nombre de usuario:</label>
-                    <p>{{getUsuario.nombreUsuario}}</p>
+                    <p>{{Usuario.nombreUsuario}}</p>
                 </div>
                 <div class="Cusuario">
                     <label>Correo:</label>
-                    <p>{{getUsuario.email}}</p>
+                    <p>{{Usuario.email}}</p>
                 </div>
             </div>
             <button class="b-guardar" (click)="deletUser()">Eliminar cuenta</button>
