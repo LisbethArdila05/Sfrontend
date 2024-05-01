@@ -23,26 +23,6 @@ export class ServiceArduinoService {
     return this.http.get<GetSensor>(`${this.url}/sensor`)
   }
   getfirst():Observable<GetSensor>{
-    return this.http.get<GetSensor>(`${this.url}/sensor/primer`)
+    return this.http.get<GetSensor>(`${this.url}/sensor/primer`) 
   }
-  // getToken():string | null{
-  //   const token = localStorage.getItem('tokenSign')
-  //   return token
-  // }
-  // getUser(){
-  //   const tokenSign = this.getToken()
-  //   //console.log(tokenSign)
-  //   if(tokenSign){
-  //     const decode = jwtDecode(tokenSign) as usuario
-  //     const usuario = decode.nombreUsuario
-  //     console.log(usuario)
-  //     this.http.post<usuario>(`${this.url}/sensor/info`, {usuario}).subscribe( res => {},
-  //       (error)=>{
-  //         console.log(error)
-  //       })
-  //     return decode
-  //   }else{
-  //     return null
-  //   }
-  // }
 } 

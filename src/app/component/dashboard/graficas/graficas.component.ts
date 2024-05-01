@@ -91,7 +91,7 @@ export class GraficasComponent  implements OnInit {
   sensorPrimero(){
     this.serviceA.getfirst().subscribe((res:any)=>{
       const sensorData = res.GetFirstsensor;
-      if(typeof res.GetFirstsensor === 'object'){
+      if(typeof res.GetFirstsensor === 'object'){ 
         this.listSensor = []
         this.listSensor.push(res.GetFirstsensor)
        // this.datosDisponibles = true
