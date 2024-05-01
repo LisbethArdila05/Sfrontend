@@ -103,8 +103,6 @@ select{
     margin-left: 400px;
     background-color: #FFF
 }
-
-
 .datos-sensor{
     margin-top: 5%;
     width: 100%;
@@ -189,3 +187,55 @@ select{
     background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+  //responsivo
+@media (max-width: 380px) {
+   .Dashboard h1{
+        margin-left: 30%;
+   }
+   .informacion{
+    margin-left: 5%;
+    margin-top: 2%;
+   }
+   .descripcion{
+    position: relative;
+    background-color: #5fa08c;
+    margin-top: -120%;
+    width: 80%;
+    margin-left: 1%;
+   }
+   .info-descripcion{
+    width: 100%;
+    font-size: .7em;
+   }
+   .img-descripcion{
+    display: none;
+   }
+   .grafica{
+    background-color: #11998e;
+    margin-top: 80%;
+    height: 20%;
+   }
+
+
+}
+@media (max-width: 400px) {
+    
+}
+@media (max-width: 420px) {
+    
+}
+@media (max-width: 480px) {
+    
+}
+@media (max-width: 550px) {
+    
+}
+@media (max-width: 720px) {
+    
+}
+@media (max-width: 850px) {
+    
+}
+@media (max-width: 1024px) {
+    
+}
