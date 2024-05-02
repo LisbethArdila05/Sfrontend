@@ -5,6 +5,8 @@ import { ServiceArduinoService } from 'src/app/service/service-arduino.service';
 import { planta } from '../model/planta.interface';
 import { GetSensor } from '../model/sensor.interface';
 import { PaginatePipe } from 'ngx-pagination';
+import { usuario } from '../../usuario/model/usuario.interface';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-variables',
@@ -23,10 +25,20 @@ export class VariablesComponent  implements OnInit {
   //paginacion
   p: number = 1;
   pagesize:number = 3;
+
+  Usuario: usuario = {
+    id: 0,
+    nombreUsuario: '',
+    email: '',
+    contrasena: ''
+  } 
   
   constructor(private service: ServicePlantaService, private serviceA: ServiceArduinoService) { }
 
   ngOnInit() {
+    const token = localStorage.getItem('tokenSign') || ''
+    const decode = jwtDecode(token) as usuario
+    this.Usuario.id = decode.id
     this.plantas()
     this.getDatosSensor()
   }
@@ -45,7 +57,7 @@ export class VariablesComponent  implements OnInit {
     })
   }
   getDatosSensor(){
-    this.serviceA.getDatosSensor().subscribe((res: any) => {
+    this.serviceA.getDatosSensor(this.Usuario.id).subscribe((res: any) => {
       for(let sensor of res.GetSensor){
         this.listSensor.push(sensor)
       }

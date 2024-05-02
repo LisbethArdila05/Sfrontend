@@ -46,12 +46,14 @@ export class GraficasComponent  implements OnInit {
   constructor(private service: ServicePlantaService, private serviceA: ServiceArduinoService) { }
 
   ngOnInit() {
-    this.plantas()
-    this.sensorPrimero()
+
     const token = localStorage.getItem('tokenSign') || ''
     const decode = jwtDecode(token) as usuario
     this.Usuario = decode
+    //console.log(this.Usuario.id)
     //this.getU = this.serviceA.getUser()
+    this.plantas()
+    this.sensorPrimero()
 
   }
   private imagePlanta(tipoPlanta: string) {
@@ -89,7 +91,7 @@ export class GraficasComponent  implements OnInit {
     )}
   //esta funcion muestra la informacion que esta en la base de datos en la tabla "sensor" ademas de imprimirlos en la grafica
   sensorPrimero(){
-    this.serviceA.getfirst().subscribe((res:any)=>{
+    this.serviceA.getfirst(this.Usuario.id).subscribe((res:any)=>{
       const sensorData = res.GetFirstsensor;
       if(typeof res.GetFirstsensor === 'object'){ 
         this.listSensor = []

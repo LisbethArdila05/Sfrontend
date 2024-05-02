@@ -16,13 +16,13 @@ export class ServiceArduinoService {
   constructor(private http: HttpClient) { }
 
   conexionArduino(idPlanta: number, idUser: number): Observable<any>{
-    return this.http.post(`${this.url}/sensor`, {idPlanta,idUser})
+    return this.http.post(`${this.url}/sensor`, {idPlanta, idUser})
   }
 
-  getDatosSensor():Observable<GetSensor>{
-    return this.http.get<GetSensor>(`${this.url}/sensor`)
+  getDatosSensor(idUser: number):Observable<GetSensor>{
+    return this.http.get<GetSensor>(`${this.url}/sensor/${idUser}`)
   }
-  getfirst():Observable<GetSensor>{
-    return this.http.get<GetSensor>(`${this.url}/sensor/primer`) 
+  getfirst(idUser: number):Observable<GetSensor>{
+    return this.http.get<GetSensor>(`${this.url}/sensor/primer/${idUser}`) 
   }
 } 
