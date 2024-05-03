@@ -4,7 +4,7 @@ import { ServicePlantaService } from 'src/app/service/service-planta.service';
 import { ServiceArduinoService } from 'src/app/service/service-arduino.service';
 import { planta } from '../model/planta.interface';
 import { GetSensor } from '../model/sensor.interface';
-import { PaginatePipe } from 'ngx-pagination';
+//import { PaginatePipe } from 'ngx-pagination';
 import { usuario } from '../../usuario/model/usuario.interface';
 import { jwtDecode } from 'jwt-decode';
 
@@ -20,12 +20,11 @@ export class VariablesComponent  implements OnInit {
   public barChartOptions: any = { responsive: true}; 
   public barChartLegend = true;
 
-  listPlant : planta[] = []
+  listPlant : planta[] = [] 
   listSensor: GetSensor [] =[]
   //paginacion
   p: number = 1;
-  pagesize:number = 3;
-
+ 
   Usuario: usuario = {
     id: 0,
     nombreUsuario: '',
@@ -46,7 +45,7 @@ export class VariablesComponent  implements OnInit {
   handlePageChange(event:any) {
     this.p = event;
   }
-  //metodos para 
+  //metodos 
   plantas(){
     this.service.getPlanta().subscribe((res:any)=>{
       for(let plants of res.planta){
@@ -116,11 +115,5 @@ export class VariablesComponent  implements OnInit {
     }));
     return promedios
   }
-  //filtra por mes
- 
-  
-
-  //graficas de linea de un mes en general de todas las plantas agrupo por dia
-  //valiables mas altas y bajas
 }
 

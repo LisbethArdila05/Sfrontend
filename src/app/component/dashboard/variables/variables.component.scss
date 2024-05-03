@@ -10,33 +10,29 @@
     width: 20%;
 }
 .graficas{
-    width: 90%;
-    height: 50%;
-    margin-top: -1%;
-    margin-left: 5%;
-}
-.grafica1{
-    height: 85%;
-    width: 55%;
+    width: 54%;
+    height: 7vh;
+    margin: 0 10%; 
     float: left;
-    border-radius: 10px;
 }
-.grafica2{
-    height: 83%;
-    width: 43%;
-    margin-left: 57%;
-}
-.show-entries{
-    width: 170px;
-    margin-top: -4%;
-    margin-left: 5%;
-    z-index: 20;
-}
+.img-planta img{
+    width: 35%;
+    height: 50vh;
+    float: right;
+    right: 10%;
+    margin-top: -10%;
 
+}
+// .show-entries{
+//     width: 170px;
+//     margin-top: 2%;
+//     margin-left: 5%;
+//     z-index: 20;
+// }
 .tabla{
     width: 90%;
     height: 35%;
-    margin-top: 2%;
+    margin-top: 30%;
     margin-left: 5%;
     z-index: 19;
 }

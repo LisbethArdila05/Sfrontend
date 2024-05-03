@@ -12,14 +12,17 @@
             </canvas>
         </div> 
     </div>
-    <div class="show-entries">
+    <div class="img-planta">
+      <img src="../../../../assets/2009.i003.036_cactus_pot_ser-04.jpg" alt="">
+    </div>
+    <!-- <div class="show-entries"> 
       <label>Entrada  </label>
       <select name="" id="" [(ngModel)]="pagesize">
           <option value="3">3</option>
           <option value="5">5</option>
           <option value="10">10</option>
       </select>
-    </div>
+    </div> -->
     <div class="tabla">
         <table class="table table-bordered">
             <thead>
@@ -33,7 +36,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let sensor of listSensor | paginate: { itemsPerPage: pagesize, currentPage: p}">
+              <tr *ngFor="let sensor of listSensor | paginate: { itemsPerPage: 5, currentPage: p}">
                 <td>{{sensor.fecha | date:'yyyy-MM-dd   h:mm a'}}</td>
                 <td>{{sensor.sHumedad}}</td>
                 <td>{{sensor.sTemperaturaC}}</td>

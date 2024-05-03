@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
+
 @NgModule({
   declarations: [
     variablesRouting,
@@ -25,7 +26,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgChartsModule,
     SharedModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ]
 })
 export class DashboardModule { }
