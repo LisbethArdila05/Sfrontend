@@ -2,6 +2,7 @@
 *{
     font-family: 'Raleway', sans-serif;
 }
+
 .linea{
     border-bottom: 2px solid #39795e;
     position: relative;
@@ -10,6 +11,7 @@
     margin-top: 5%;
 }
 .nav{
+    display: block;
     width: 25%;
     height: 100vh;
     background-color: rgb(192, 238, 201, .6);
@@ -33,16 +35,19 @@
     display: flex;
     align-items: center;
     border-radius: 10px;
+    padding-top: 9px;
 }
 .list-links:hover{
+    color: #fff;
    background-color: #66B695;
+
 }
 .a-links{
     color: #000;
     text-decoration: none;
     margin-left: 8%;
     width: 100%;
-    height: 1005;
+    height: 100%;
 }
 .a-links ion-icon{
     font-size: 1.5em;
@@ -50,6 +55,16 @@
 .a-links span{
     font-size: 1.1em;
     margin-left: 3%;
+}
+#menu-responsive{
+    display: none;
+}
+#close-responsive{
+    display: none;
+}
+.active{
+    color: #fff;
+    background-color: #66B695;
 }
 //responsivo
 @media (max-width: 380px) {
@@ -65,14 +80,66 @@
     
 }
 @media (max-width: 550px) {
-    
+    // .menu{
+    //     display: block;
+    // }
+
 }
 @media (max-width: 720px) {
-    
-}
+    // .menu{
+    //     display: block;
+    // }
+
+} 
 @media (max-width: 850px) {
-    
-}
+    // .menu{
+    //     display: block;
+    // }
+
+} 
 @media (max-width: 1024px) {
-    
-}
+    #menu-responsive{
+        display: block;
+        padding: auto;
+        position: absolute;
+        top: .5%;
+        left: .5%;
+        font-size: 2em;
+        background-color: transparent;
+    }
+    #close-responsive{
+        padding: auto;
+        font-size: 2em;
+        background-color: transparent;
+        display: flex;
+        position: fixed;
+        left: 21.7%;
+        top: .2%;
+    }
+    .backDrop{
+        z-index: 1049;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex; 
+    }
+    .nav{
+        position: fixed;
+        display: hidden;
+        z-index: 1051;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+    .list{
+        margin: -150% auto;
+    }
+    .list-links{
+
+        margin-left: -25%; 
+        height: 4vh;
+    }
+
+} 
+ 

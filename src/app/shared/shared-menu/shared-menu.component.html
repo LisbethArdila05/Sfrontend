@@ -1,5 +1,7 @@
 <body>
-  <nav class="nav">
+  <div class="backDrop" *ngIf="menu"></div>
+  <nav class="nav" *ngIf="menu"> <!-- *ngIf="!menu" -->
+    <button id="close-responsive" (click)="verMenu()"><ion-icon name="close-outline"></ion-icon></button>
     <div class="logo">
       <img src="../../../assets/Logo sin fondo.png">
       <div class="linea">
@@ -7,31 +9,34 @@
       </div>
     </div>
     <ul class="list">
-      <li class="list-links">
-        <a routerLink="/presentacion" class="a-links">
+      <li class="list-links" routerLinkActive="active">
+        <a routerLink="/presentacion" class="a-links" >
           <ion-icon name="home-outline"></ion-icon>
           <span>Inicio</span>
         </a>
       </li>
-      <li class="list-links">
-        <a routerLink="/graficas" class="a-links">
+      <li class="list-links" routerLinkActive="active">
+        <a routerLink="/graficas" class="a-links" >
           <ion-icon name="pulse-outline"></ion-icon>
           <span>Dashboard</span>
         </a> 
       </li>
-      <li class="list-links">
-        <a routerLink="/variables" class="a-links">
+      <li class="list-links" routerLinkActive="active">
+        <a routerLink="/variables" class="a-links" >
           <ion-icon name="newspaper-outline"></ion-icon>
           <span>Historial</span>
         </a>
       </li>
-      <li class="list-links">
-        <a routerLink="/cuenta" class="a-links">
+      <li class="list-links" routerLinkActive="active">
+        <a routerLink="/cuenta" class="a-links" >
           <ion-icon name="person-circle-outline"></ion-icon>
           <span>Cuenta</span>
         </a>
       </li> 
     </ul>
   </nav>
+  <button *ngIf="!menu" id="menu-responsive" (click)="verMenu()" ><ion-icon name="menu-outline"></ion-icon></button>
+
 </body>
+
   
