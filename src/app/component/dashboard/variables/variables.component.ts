@@ -20,6 +20,8 @@ export class VariablesComponent  implements OnInit {
   public barChartOptions: any = { responsive: true}; 
   public barChartLegend = true;
 
+  
+
   listPlant : planta[] = [] 
   listSensor: GetSensor [] =[]
   //paginacion

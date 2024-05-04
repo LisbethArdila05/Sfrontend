@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, delay } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import {jwtDecode} from 'jwt-decode'
@@ -23,6 +23,6 @@ export class ServiceArduinoService {
     return this.http.get<GetSensor>(`${this.url}/sensor/${idUser}`)
   }
   getfirst(idUser: number):Observable<GetSensor>{
-    return this.http.get<GetSensor>(`${this.url}/sensor/primer/${idUser}`) 
+    return this.http.get<GetSensor>(`${this.url}/sensor/primer/${idUser}`).pipe(delay(500))
   }
 } 

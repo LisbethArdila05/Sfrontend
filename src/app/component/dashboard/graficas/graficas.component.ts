@@ -41,7 +41,8 @@ export class GraficasComponent  implements OnInit {
     nombreUsuario: '',
     email: '',
     contrasena: ''
-  }  
+  } 
+  loading : boolean= false 
 
   constructor(private service: ServicePlantaService, private serviceA: ServiceArduinoService) { }
 
@@ -91,9 +92,11 @@ export class GraficasComponent  implements OnInit {
     )}
   //esta funcion muestra la informacion que esta en la base de datos en la tabla "sensor" ademas de imprimirlos en la grafica
   sensorPrimero(){
+    this.loading = true;
     this.serviceA.getfirst(this.Usuario.id).subscribe((res:any)=>{
       const sensorData = res.GetFirstsensor;
       if(typeof res.GetFirstsensor === 'object'){ 
+
         this.listSensor = []
         this.listSensor.push(res.GetFirstsensor)
        // this.datosDisponibles = true
@@ -121,8 +124,11 @@ export class GraficasComponent  implements OnInit {
     },
     (error)=>{
       console.log(error)
-    })
-  } 
+    },
+    ()=>{
+      this.loading = false
+    }
+  )} 
   //este metodo compara los datos del sensor con los de la tabla "tipo de planta"
   compararDatos(sensorData: GetSensor){
     const planta = sensorData.tipoPlanta;
