@@ -14,7 +14,7 @@
     display: block;
     width: 25%;
     height: 100vh;
-    background-color: rgb(192, 238, 201, .6);
+    background-color: #c0eec9;
 }
 .logo{
     width: 50%;
@@ -67,37 +67,7 @@
     background-color: #66B695;
 }
 //responsivo
-@media (max-width: 380px) {
-
-}
-@media (max-width: 400px) {
-    
-}
-@media (max-width: 420px) {
-    
-}
-@media (max-width: 480px) {
-    
-}
-@media (max-width: 550px) {
-    // .menu{
-    //     display: block;
-    // }
-
-}
-@media (max-width: 720px) {
-    // .menu{
-    //     display: block;
-    // }
-
-} 
-@media (max-width: 850px) {
-    // .menu{
-    //     display: block;
-    // }
-
-} 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     #menu-responsive{
         display: block;
         padding: auto;
@@ -136,10 +106,68 @@
         margin: -150% auto;
     }
     .list-links{
-
         margin-left: -25%; 
         height: 4vh;
     }
-
 } 
+@media screen and (max-width: 850px) {
+    .list{
+        margin-top: -45% ;
+    }
+    .list-links{
+        margin-left: -25%; 
+        height: 8vh;
+        padding-top: 10px;
+    }
+}
+@media screen and (max-width: 720px) {
+    #close-responsive{
+        left: 20%;
+    }
+    .list-links{
+        margin-left: -35%; 
+    }
+} 
+@media screen and (max-width: 550px) {
+    #close-responsive{
+        left: 34%;
+    }
+    .nav{
+        width: 40%;
+    }
+    .list-links{
+        width: 35vw;
+    }
+}
+@media screen and (max-width: 480px) {
+    .nav{
+        width: 45%;
+    }
+    #close-responsive{
+        left: 38%;
+    }
+    .list-links{
+        width: 38vw;
+    }
+}
+@media screen and (max-width: 420px) {
+    .nav{
+        width: 50%;
+    } 
+    .list-links{
+        width: 42vw;
+    }
+}
+@media screen and (max-width: 380px) {
+    .nav{
+        width: 55%;
+    }
+    #close-responsive{
+        left: 47%;
+    }
+    .list-links{
+        width: 47vw;
+    }
+}
+
  
