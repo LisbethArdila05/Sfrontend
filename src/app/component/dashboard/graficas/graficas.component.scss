@@ -136,8 +136,9 @@ select{
 }
 .info-descripcion{
     width: 400px;
-    position: relative;
+    //position: relative;
     //right: 7%;
+    z-index: 0;
     bottom: 4%;
 }
 .card {
@@ -340,8 +341,10 @@ select{
         margin-top: -1%;
     }
     .info-descripcion{
+        width: 100%;
         margin-top: 5%;
-        font-size: .9em;
+        font-size: .8em;
+        //z-index: 1;
     }
     .card{
         margin-top: -1.8%;
