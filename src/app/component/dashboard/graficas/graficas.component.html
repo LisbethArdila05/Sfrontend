@@ -4,7 +4,7 @@
     <span>Actualizar</span>
   </button>
   <div class="overlay" *ngIf="seleccionPlanta"></div>
-  <article article *ngIf="seleccionPlanta" class="form-select"> 
+  <article *ngIf="seleccionPlanta" class="form-select"> 
       <label class="planta">Tipo de Planta: </label>
       <select [(ngModel)]="plantaElejida" name="plantaSelect">
         <option value="0">Selecciona</option>

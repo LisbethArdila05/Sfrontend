@@ -38,6 +38,7 @@ button {
     cursor: pointer;
     margin: 5px;
     margin: -25% 780%;
+    //z-index: 5;
 } 
 button span {
     cursor: pointer;
@@ -67,7 +68,7 @@ button:hover span:after {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Opacidad ajustable */
-    z-index: 9; /* Un valor menor que el modal */
+    z-index: 99; /* Un valor menor que el modal */
   }
    .form-planta{
     width: 10vw;
@@ -95,7 +96,7 @@ select{
 }
 .form-select{
     border-radius: 10px;
-    z-index: 12;
+    z-index: 100;
     width: 30vw;
     height: 30vh;
     position: relative;
@@ -131,6 +132,7 @@ select{
     border-radius: 100px;
     margin-top: 5%;
     margin-left: 35%;
+    //object-fit: contain;
 }
 .info-descripcion{
     width: 400px;
@@ -188,73 +190,163 @@ select{
     background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   //responsivo
-@media (max-width: 380px) {
-   .Dashboard h1{
-        margin-left: 30%;
-   }
-   .informacion{
-    margin-left: 5%;
-    margin-top: 2%;
-   }
-   .img-descripcion{
-    display: none;
-   }
-   .grafica{
-    margin-top: 80%;
-    height: 30vh;
-    width: 90%;
-    margin: 0 auto; 
-   }
-   .grafica h2{
-    display: none;
-   }
-   .datos{
-    background-color: #5fa08c;
-    position: relative;
-    margin-top: -100%;
-   }
-   .card{
-    width: 25%;
-    height: 8vh;
-    margin-left: 5%;
-    box-shadow: none;
-   }
-   .c-txt{
-    font-size: .7em;
-   }
-   .descripcion{
-    position: relative;
-    width: 80%;
-    height: 30vh;
-    margin: 15% auto;
-   }
-   .info-descripcion{
-    width: 100%;
-    font-size: .7em;
-   }
-   button{
-    margin-top: 490px;
-    margin-left: 140px;
-   }
+
+@media screen and (max-width: 1024px) {
+    .Dashboard{
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        font-size: 1.5em;
+        margin-left: 10%;
+        margin-top: -5%;
+    }
+    button{
+        margin-top: 20%;
+        margin-left: 750px;
+    }
+    .informacion{
+        width: 50%;
+        font-size: 1.1em;
+        margin-top: 2%;
+        margin-left: 3%;
+    }
+    .datos-sensor{
+        width: 100%;
+        height: 100%;
+        margin-top: 1%;
+        margin-left: -10%;
+    }
+    .grafica{
+        height: 35%;
+        width: 80%;
+        margin-left: 10%;
+    }
+    .descripcion{
+        width: 80%;
+        height: 35%;
+        margin-left: 10%;
+        margin-top: 10%;
+    }
+    .img-descripcion{
+        height: 7px;
+        width: 90%;
+        margin-left: -25%;
+        //display: none;
+    }
+    .info-descripcion{
+        margin-left: 45%;
+        margin-top: -10%;
+    }
+    .card{
+        margin-top: 2%;
+    }
 }
-@media (max-width: 400px) {
-    
+@media screen and (max-width: 850px) {
+    .card{
+        margin-left: 7%;
+        box-shadow: none;
+    }
+    button{
+        margin-top: 20%;
+        margin-left: 720%;
+    }
 }
-@media (max-width: 420px) {
-    
+@media screen and (max-width: 720px) {
+  .grafica{
+    height: 30%;
+    width: 70%;
+    margin-left: 15%;
+  }
+  .info-descripcion{
+    font-size: .9em;
+  }
+  .card{
+    margin-left: 4%;
+  }
+  button{
+    margin-left: 700%;
+  }
+
 }
-@media (max-width: 480px) {
-    
+@media screen and (max-width: 550px) {
+    .informacion{
+        width: 80%;
+    }
+    .grafica{
+        height: 30%;
+        width: 80%;
+        margin-left: 10%; 
+    }
+    .info-descripcion{
+        font-size: .7em;
+        width: 70%;
+    }
+    .card{
+        margin-top: -4%;
+        width: 28%;
+        height: 10vh; 
+    }
+    button{
+        margin-left: 650%;
+    }
 }
-@media (max-width: 550px) {
-    
+@media screen and (max-width: 480px) {
+    .Dashboard{
+        font-size: 1.3em;
+    }
+    .grafica{
+        margin-left: 12%;
+        width: 75%;
+        height: 29%;
+    }
+    .info-descripcion{
+        //margin-top: 1%;
+        font-size: .7em;
+    }
+    button{
+        margin-left: 600%;
+    }
 }
-@media (max-width: 720px) {
-    
+@media screen and (max-width: 420px) {
+    .Dashboard{
+        font-size: 1.2em;
+    }
+    .info-descripcion{
+        width: 100%;
+        margin-left: 5%;
+        margin-top: 2%;
+    }
+    .img-descripcion{
+        display: none;
+    }
+    button{
+        margin-left: 550%;
+    }
 }
-@media (max-width: 850px) {
-    
+@media screen and (max-width: 400px) {
+    .Dashboard{
+        font-size: 1em;
+    }  
+    .info-descripcion{
+        font-size: .8em;
+        margin-top: 1%;
+    }
 }
-@media (max-width: 1024px) {
-    
+@media screen and (max-width: 380px) {
+    .Dashboard{
+        font-size: .9em;
+    }
+    .grafica{
+        margin-top: -1%;
+    }
+    .info-descripcion{
+        margin-top: 5%;
+        font-size: .9em;
+    }
+    .card{
+        margin-top: -1.8%;
+    }
+    button{
+        margin-left: 500%;
+    }
 }
