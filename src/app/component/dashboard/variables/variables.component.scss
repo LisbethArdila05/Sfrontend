@@ -48,8 +48,116 @@ thead{
     background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 40px;
 }
-
 td{
     text-align: center;
     padding-top: 1%;
+}
+@media screen and (max-width: 1024px){
+    .historial{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    .historial h1{
+        margin-left: 10%;
+        font-size: 2em;
+    }
+    .img-planta{
+        display: none;
+    }
+    .graficas{
+        width: 850px;
+        height: 42vh;
+    }
+    .tabla table{
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+}
+@media screen and (max-width: 850px){
+    .graficas{
+        margin-top: 5%;
+        width: 800px;
+        height: 42vh;
+    }
+    .tabla table{
+        font-size: .8em;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+}
+@media screen and (max-width: 720px) {
+    .historial h1{
+        font-size: 1.5em;
+    }
+    .graficas{
+        width: 650px;
+        height: 42vh;
+    }
+    .tabla table{
+        font-size: .8em;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+}
+@media screen and (max-width: 550px){
+    .historial h1{
+        font-size: 1.5em;
+    }
+    .graficas{
+        width: 500px;
+        height: 42vh;
+    }
+    .tabla table{
+        font-size: .8em;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+}
+@media screen and (max-width: 480px){
+    .historial h1{
+        font-size: 1.4em;
+    }
+    .graficas{
+        width: 400px;
+        height: 40vh;
+    }
+    table{
+        font-size: .8em;
+        overflow-x: scroll;
+    }
+}
+@media screen and (max-width: 420px){
+    .historial h1{
+        font-size: 1.2em;
+    }
+    .graficas{
+        width: 380px;
+        height: 38vh;
+    }
+    .tabla table{
+        font-size: .6em;
+        overflow-x: scroll;
+        overflow-y: scroll;
+    }
+}
+@media screen and (max-width: 400px){
+     .graficas{
+        width: 350px;
+        height: 35vh;
+     }
+     .tabla table{
+        font-size: .6em;
+        overflow-x: scroll;
+        overflow-y: scroll; 
+     }
+}
+@media screen and (max-width: 380px){
+    .historial h1{
+        font-size: 1em;
+    } 
+    .graficas{
+        width: 330px;
+        height: 33vh;
+    }
 }
