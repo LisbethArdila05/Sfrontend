@@ -40,7 +40,6 @@
     margin-left: 10%;
 }
 .informacion{
-    background-color: aqua;
     width: 80%;
     margin: auto;
 }
@@ -72,11 +71,10 @@
     height: 10vh;
     border-radius: 10px;
     font-size: 1.5em;
-    margin-left: 5%;
-    margin-top: 15%;
+    margin-left: 55%;
+    margin-top: 10%;
   }
   .b-close{
-    position: relative;
     background: #ED213A;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -85,10 +83,11 @@
     height: 10vh;
     border-radius: 10px;
     font-size: 1.5em;
-    margin: 0 50%;
-
-    // margin-left: 5%;
-    // margin-top: -200px;
+    display: flex;
+    margin-top: -61px;
+    margin-left: 5%;
+    justify-content: center;
+    align-items: center;
     }
   //responsivo
   @media screen and (max-width: 1024px){
@@ -96,24 +95,119 @@
         width: 100%;
         height: 100%;
         margin: 0;
+
     }
-    
+    .avatar {
+        height: 30vh;
+        width: 40%;
+        margin-top: 5%;
+    }
+    .usuario h1{
+        font-size: 3em;
+    }
+    .info{
+        height: 40vh;
+    }
+    .info h1{
+        font-size: 2em;
+    }
+    .Nusuario label{
+        font-size: 1.5em;
+    }
+    .Nusuario p{
+        font-size: 1.5em;
+    }
+    .Cusuario label{
+        font-size: 1.5em;
+    }
+    .Cusuario p{
+        font-size: 1.5em;
+    }
+    .b-guardar{
+        width: 30%;
+        height: 7vh;
+    }
+    .b-close{
+        width: 30%;
+        height: 7vh;
+        margin-top: -10%;
+        margin-left: 15%;
+    }
 }
 @media screen and (max-width: 850px){
-    
+    .usuario h1{
+        font-size: 2.5em;
+    }     
 }
 @media screen and (max-width: 550px){
-    
+    .info{
+        height: 45vh;
+    }
+    .b-close{
+        margin-top: -10%;
+    }
+    .b-guardar{
+        margin-top: 20%;
+    }
 }
 @media screen and (max-width: 480px){
-    
+    .Cusuario{
+        margin-top: 10%;
+    } 
+    .b-close{
+        width: 35%;
+        height: 8vh;
+        margin-top: -12%;
+    } 
+    .b-guardar{
+        width: 35%;
+        height: 8vh;
+    }
 }
 @media screen and (max-width: 420px){
-    
+   .usuario h1{
+    font-size: 2em;
+   } 
+   .b-close{
+    width: 37%;
+   }  
+   .b-guardar{
+    width: 37%;
+   }
 }
 @media screen and (max-width: 400px){
-    
-}
-@media screen and (max-width: 380px){
-    
+    .usuario h1{
+        font-size: 1.2em;
+    }
+    .info{
+        height: 45vh;
+    }
+    .info h1{
+        font-size: 1.5em;
+    }
+    .Nusuario label{
+        font-size: 1em;
+    }
+    .Nusuario p{
+        font-size: 1em;
+    }
+    .Cusuario{
+        margin-top: -1%;
+    }
+    .Cusuario label{
+        font-size: 1em;
+    }
+    .Cusuario p{
+        font-size: 1em;
+    }
+    .b-guardar{
+        width: 40%;
+        height: 9vh;
+    }
+    .b-close{
+        width: 40%;
+        height: 9vh;
+        margin-left: 5%;
+        margin-top: -14%;
+    }  
 }
