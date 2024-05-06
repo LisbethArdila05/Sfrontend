@@ -9,7 +9,7 @@
       </div>
     </div>
     <ul class="list">
-      <li class="list-links" routerLinkActive="active">
+      <li class="list-links" routerLinkActive="active" *ngIf="innerWidth() >= 1024">
         <a routerLink="/presentacion" class="a-links" >
           <ion-icon name="home-outline"></ion-icon>
           <span>Inicio</span>

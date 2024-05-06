@@ -8,7 +8,6 @@
     overflow: hidden;
 }
 .principal .title{
-    position: relative;
     width: 30%;
     left: 60%;
     top: -4%;
@@ -26,18 +25,37 @@
     height: 100%;
     left: 2%;
     list-style: none;
-    position: relative;
+    //position: relative;
 }
 .principal img{
     width: 65%;
     height: 65%;  
 }
 .informacion{
-    position: absolute;
+    //position: absolute;
     text-align: center;
     left: 550px;
     padding: 0 125px;
     top: 150px;
+}
+.responsive{
+    display: none;
+}
+.img-responsive{
+    width: 100%;
+    height: 50vh;
+    margin-top: -110%;
+    //margin-top: -550px;
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    //background-image: url();
+}
+.wave path{
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e);
+    display: flex;
 }
 @keyframes slide{
     0% { margin-left: 0; }
@@ -53,57 +71,17 @@
     100% { margin-left: -300%; }
 }
 //responsivo
-@media (max-width: 380px) {
-    .principal .title{
-        left: 20%;
-        width: 60%;
-        text-align: center;
-        font-size: 1.5em;
-    } 
-    .principal ul{
-        display: flex;
-        padding: 0;
-        height: 100%;
-        width: 2600px; /* Reducir el ancho para adaptarse a una pantalla de 380px */
-        overflow: hidden; /* Asegura que el contenido no se desborde */
-        animation: slide 20s infinite alternate ease-in-out;
-    }
-    .principal li{
-        width: 100%;
-        height: 100%;
-        list-style: none;
-        position: relative;
-    }
-    .principal img{
-        width: 65%;
-        height: auto; /* Ajustar la altura automáticamente para mantener la proporción */
-    }
-    .informacion{
-        position: absolute;
-        text-align: center;
-        left: 10px; /* Ajustar la posición de la información */
-        right: 10px; /* Ajustar la posición de la información */
-        top: 150px;
+@media screen and (max-width: 1024px) {
+    .principal{
+        display: none;
+    }  
+    .responsive{
+        display: block;
     }
 }
-@media (max-width: 400px) {
-    
-}
-@media (max-width: 420px) {
-    
-}
-@media (max-width: 480px) {
-    
-}
-@media (max-width: 550px) {
-    
-}
-@media (max-width: 720px) {
-    
-}
-@media (max-width: 850px) {
-    
-}
-@media (max-width: 1024px) {
-    
-}
+
+
+
+
+
+
