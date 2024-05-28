@@ -44,9 +44,9 @@ export class VariablesComponent  implements OnInit {
     this.getDatosSensor()
   }
   //paginacion
-  handlePageChange(event:any) {
-    this.p = event;
-  }
+  // handlePageChange(event:any) {
+  //   this.p = event;
+  // }
   //metodos 
   plantas(){
     this.service.getPlanta().subscribe((res:any)=>{

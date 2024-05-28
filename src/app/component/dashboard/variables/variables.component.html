@@ -30,7 +30,7 @@
             <tbody>
               <tr *ngFor="let sensor of listSensor | paginate: { itemsPerPage: 5, currentPage: p}">
                 <td>{{sensor.fecha | date:'yyyy-MM-dd   h:mm a'}}</td>
-                <td>{{sensor.sHumedad}}</td>
+                <td>{{sensor.sHumedad}}</td> 
                 <td>{{sensor.sTemperaturaC}}</td>
                 <td>{{sensor.sTemperaturaF}}</td>
                 <td>{{sensor.sHumedadS}}</td>
@@ -38,7 +38,7 @@
               </tr>
             </tbody>
           </table>
-          <pagination-controls (pageChange)="handlePageChange($event)"
+          <pagination-controls (pageChange)="p = $event"
           previousLabel="Ant"
           nextLabel="Sig"></pagination-controls>
     </div>

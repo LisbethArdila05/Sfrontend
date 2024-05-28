@@ -242,6 +242,12 @@ select{
     .card{
         margin-top: 2%;
     }
+    .form-select{
+        width: 35vw;
+        height: 15vh;
+        margin-left: 220%;
+        margin-top: 250px;
+    }
 }
 @media screen and (max-width: 850px) {
     .card{
@@ -252,6 +258,10 @@ select{
         margin-top: 20%;
         margin-left: 720%;
     }
+    .form-select{
+        width: 45vw;
+    }
+   
 }
 @media screen and (max-width: 720px) {
   .grafica{
@@ -268,6 +278,9 @@ select{
   button{
     margin-left: 700%;
   }
+  .form-select{
+    width: 50vw;
+}
 
 }
 @media screen and (max-width: 550px) {
@@ -291,6 +304,10 @@ select{
     button{
         margin-left: 650%;
     }
+    .form-select{
+        width: 60vw;
+        margin-left: 50px;
+    }
 }
 @media screen and (max-width: 480px) {
     .Dashboard{
@@ -308,6 +325,10 @@ select{
     button{
         margin-left: 600%;
     }
+    .form-select{
+        width: 70vw;
+        margin-left: 35px;
+    }
 }
 @media screen and (max-width: 420px) {
     .Dashboard{
@@ -323,6 +344,10 @@ select{
     }
     button{
         margin-left: 550%;
+    }
+    .form-select{
+        width: 80vw;
+        margin-left: 5px;
     }
 }
 @media screen and (max-width: 400px) {
